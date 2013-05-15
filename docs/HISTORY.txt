@@ -4,6 +4,12 @@ Changelog
 1.0.7 (unreleased)
 ------------------
 
+* bugfix: if a referenced content does not match criteria any longer a 
+  subsequent call of the edit form fails with a LookupError. To avoid this
+  we now ignore missing values from the ObjPathSource provider. This gives the
+  editor a form again to correct the value.
+  [jensens] 
+
 * Added check in tree generation if it allready exists (reopening the contenttree window).
   [phgross]
 

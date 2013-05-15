@@ -304,6 +304,7 @@ class ContentTreeWidget(ContentTreeBase, AutocompleteSelectionWidget):
 
     klass = u"contenttree-widget"
     display_template = ViewPageTemplateFile('display_single.pt')
+    ignoreMissing = True
 
 
 class MultiContentTreeWidget(ContentTreeBase, AutocompleteMultiSelectionWidget):
@@ -313,6 +314,7 @@ class MultiContentTreeWidget(ContentTreeBase, AutocompleteMultiSelectionWidget):
     klass = u"contenttree-widget"
     multi_select = True
     display_template = ViewPageTemplateFile('display_multiple.pt')
+    ignoreMissing = True
 
 
 @implementer(z3c.form.interfaces.IFieldWidget)

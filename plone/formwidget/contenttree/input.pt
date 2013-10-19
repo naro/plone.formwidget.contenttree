@@ -11,7 +11,7 @@
     <div class="contenttreeWindow"
          tal:attributes="id string:${view/id}-contenttree-window">
 
-        <ul class="formTabs"
+<!--         <ul class="formTabs"
             tal:define="libraries view/libraries;
                         length python:len(libraries)">
             <li class="formTab"
@@ -35,7 +35,7 @@
                 Library
             </a></li>
         </ul>
-
+ -->
         <div class="contenttreeWindowHeader">
             <h2 i18n:translate="heading_contenttree_browse">
                 Browse for items

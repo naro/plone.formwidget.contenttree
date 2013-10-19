@@ -6,6 +6,7 @@ from plone.formwidget.contenttree.interfaces import ILibraryProvider
 from plone.formwidget.contenttree.interfaces import IContentTreeWidget
 from zope.interface import implementer
 from zope.component import adapter
+from plone import api
 
 
 @adapter(IContentTreeWidget)
@@ -14,8 +15,7 @@ def shared_libs(widget):
     """TODO: Refactor to allow binding on special fields
        TODO: This should not be part of default package as Language index is optional
     """
-
-    catalog = getToolByName(widget.context, 'portal_catalog')
+    catalog = api.portal.get_tool('portal_catalog')
     if 'Language' in catalog.indexes():
         return [{'label': item.Title, 'query': item.getPath()}
                 for item in catalog(object_provides=INavigationRoot.__identifier__,
